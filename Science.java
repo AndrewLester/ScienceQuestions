@@ -14,7 +14,6 @@ public class Science {
   }
 
   public Science(boolean info) {
-    readFromFile();
   }
 
   private String setQuestion() {
@@ -54,15 +53,29 @@ public class Science {
     }
   }
 
-  public void readFromFile() {
-    try (Scanner scanner = new Scanner(new FileInputStream("questions.txt"));) {
-      
-      question = scanner.nextLine();
-      answer = scanner.nextLine();
-      level = Integer.parseInt(scanner.nextLine());
-      scanner.nextLine();
-    } catch (FileNotFoundException e) {
-      System.out.println("Error finding file");
-    }
+  public void setQuestion(String question) {
+    this.question = question;
   }
+
+  public void setAnswer(String answer) {
+    this.answer = answer;
+  }
+
+  public void setLevel(int level) {
+    this.level = level;
+  }
+
+  public String getQuestion() {
+    return question;
+  }
+
+  public String getAnswer() {
+    return answer;
+  }
+
+  public int getLevel() {
+    return level;
+  }
+
+
 }
